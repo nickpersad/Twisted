@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+
+    <!--
+
+        Vision Forward Marketing LLC (2015)
+     
+        <p>Description: Weather info.</p>
+     
+        @author Nick Persad
+        @version 0.1
+
+     -->
+
+    <meta charset="utf-8">
+    <title>Twisted | just weather.&#8482;</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/styles.css?v=1">
+    <!--Remember to change version. TODO: make dynamic.-->
+</head>
+
+<body>
+
+    <header>
+        <h1>Twisted</h1>
+        <p>just weather.&#8482;</p>
+    </header>
+
+    <main>
+        <form class="submit">
+            <p>Enter your zip code or city, state...</p>
+            <input type="text" placeholder="(33487 or Boca Raton, FL)">
+
+            <!--<button type="submit">Search</button>-->
+        </form>
+
+        <div class="wrapper">
+            <div id="city"></div>
+            <div id="current"></div>
+        </div>
+        
+        <div class="user wrapper">
+            <div id="cityinput"></div>
+            <div id="currentinput"></div>
+        </div>
+        
+        <div id="out" style="height:500px;width:500px;"></div>
+    </main>
+
+    <footer>
+        <p>&copy;Twisted | crafted by <a href="http://persad.me/" title="Nick Persad">nick persad</a> <a href="http://github.com/nickpersad/Twisted" title="Nick Persad's github"><i class='fa fa-github'></i></a> <a href="http://twitter.com/nick_persad" title="Nick Persad's Twitter"><i class='fa fa-twitter'></i></a>
+        </p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/main.js?v=1"></script>
+    <!--Remember to change version. TODO: make dynamic.-->
+</body>
+
+</html>
