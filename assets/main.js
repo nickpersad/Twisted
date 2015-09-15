@@ -45,18 +45,45 @@ function searchWeather(latitude,longitude) {
 		success : function(parsed_json) {
 			var location = parsed_json['location']['city'];
 			var sampleTime = parsed_json['current_observation']['local_time_rfc822'];
-			var tempString = parsed_json['current_observation']['temperature_string'];
+			var tempString = parsed_json['current_observation']['temp_f'];
 			var feelsLikeF = parsed_json['current_observation']['feelslike_f'];
 			var weather = parsed_json['current_observation']['weather'];
 			var precipTodayString = parsed_json['current_observation']['precip_today_string'];
 			var windStr = parsed_json['current_observation']['wind_string'];
+			var icon = parsed_json['current_observation']['icon_url'];
 						
             $(".wrapper").show();
-            header.innerHTML = "<h2>Current Location: <strong>"+location+"</strong></h2>";
-            wt.innerHTML = "The Current temperature is "+tempString+", but it feels like "+feelsLikeF+".";
+            header.innerHTML = "<h2><strong>"+location+"</strong></h2>";
+            wt.innerHTML = "<div class='main'><img src='"+icon+"'>"
+                         + "<hr>"
+                         + "<div class='temp'>"+tempString+"&deg;</div>"
+                         + "<div class='feels'>Feels like "+feelsLikeF+"&deg;</div></div>";
             			
 		}
 	});
+}
+
+function queue(url) {
+       
+    $.ajax({
+        url:      "http://autocomplete.wunderground.com/aq",
+        dataType: "jsonp",
+        jsonp:    "cb",     // <================= New bit is here
+        data:     {
+            format: "json",
+            query:  url
+        },
+        success:  function (data) {
+            
+            var lat = data.RESULTS[0].lat;
+            var long = data.RESULTS[0].lon;
+            console.log("long: "+long);
+            console.log("lat: "+lat);
+            
+            searchWeather(lat,long);
+            
+        }
+    });
 }
 
 $(document).ready(function () {
@@ -67,22 +94,15 @@ $(document).ready(function () {
 
     twisted.$form.keyup(function (e) {
         
+        if(!this.value){
+            geoFindMe();
+        }
+        
         e.preventDefault();
         twisted.userInput = $(this).find('input').val();
-        //twisted.userInput = twisted.userInput.replace(/ /g, "_");
-        
-        //show name of track on top of main section
-        $("#cityinput").html("<h2>" + twisted.userInput + "</h2>").css("text-transform", "capitalize");
-            
-        if (!this.value || wt === null) {
-            $(".wrapper").hide();
-            geoFindMe();
-        } else {
-             
-            
-            
-        } 
-            
-        
+        var url = twisted.userInput.replace(/ /g, "+");
+         
+        queue(url);
+                
     });
 });

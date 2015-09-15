@@ -97,8 +97,8 @@ li {
 
 header {
     padding: 5px 0;
-    color: #5AB275;
-    background: #B3FFCB;
+    color: #fff;
+    background: #00C4F2;
     top: 0;
     position: fixed;
     width: 100%;
@@ -126,7 +126,7 @@ header p {
     font-size: .875em;
     /* 14/16 */
     
-    color: #586875;
+    color: #005D73;
 }
 
 @media screen and (max-width: 600px) {
@@ -151,7 +151,7 @@ form {
 
 form p {
     text-align: left;
-    color: #B3FFCB;
+    color: #005D73;
 }
 
 form input {
@@ -162,7 +162,7 @@ form input {
     padding-right: 7em;
     line-height: 1.5;
     margin: 0;
-    border: 1px solid #5AB275;
+    border: 1px solid #005D73;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .1) inset, 0 2px 4px rgba(0, 0, 0, .1);
     border-radius: 3px;
     background: rgba(0, 0, 0, 0.02);
@@ -213,11 +213,7 @@ form input.rbtn {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
     border-radius: 3px;
     position: relative;
-}
-
-.playlist .placeholder {
-    font-style: italic;
-    color: #9B9B9B;
+    text-align: center;
 }
 
 .content {
@@ -283,63 +279,17 @@ form input.rbtn {
     -o-animation: pop .333s;
     animation: pop .333s;
 }
-
-.title {
+.main{
+    width:200px;
     margin: 0 auto;
-    width: 300px;
-    max-width: 300px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: table-cell;
+}
+.temp {
+    font-size: 50px;
+    
 }
 
-.title a {
-    text-decoration: none
-}
-
-.title a:hover {
-    color: #B3FFCB;
-}
-
-.artist {
-    display: table-cell;
-    margin: 0 auto;
-    width: 200px;
-    max-width: 200px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.time {
-    display: table-cell;
-    margin: 0 auto;
-    width: 100px;
-    font-style: italic;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.controls {
-    display: table-cell;
-    margin: 0 auto;
-    width: 40px;
-}
-
-.fa-play {
-    color: green;
-}
-
-.fa-star-o,
-.fa-star {
-    float: right;
-    padding-top: 4px
-}
-
-.fa-star {
-    color: yellow;
+.feels {
+        
 }
 
 .content img,
@@ -413,7 +363,7 @@ footer {
     bottom: 0;
     position: fixed;
     padding: 5px 0;
-    background: #5AB275;
+    background: #005D73;
     width: 100%;
     z-index: 11;
 }
@@ -422,7 +372,7 @@ footer p {
     font-size: .875em;
     /* 14/16 */
     
-    color: #B3FFCB;
+    color: #00C4F2;
 }
 
 footer a:hover {
@@ -436,7 +386,7 @@ footer .now_playing {
 }
 
 footer .box_round {
-    background: #27647F;
+    background: #005D73;
     -moz-border-radius: 12px;
     /* FF1+ */
     
